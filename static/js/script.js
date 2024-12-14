@@ -29,6 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (modal) closeModal(modal.id);
     });
   });
+// Click Outside to Close
+document.querySelectorAll('[id$="Modal"]').forEach((modal) => {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal(modal.id);
+    });
+  });
 
 
 
