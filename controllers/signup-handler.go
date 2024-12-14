@@ -33,7 +33,7 @@ func SignUpHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	// Ensure database connection exists
-	if db.DB == nil {
+	if pkg.DB == nil {
 		log.Println("Database connection is nil")
 		http.Error(w, "Database connection error", http.StatusInternalServerError)
 		return

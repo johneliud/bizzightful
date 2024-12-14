@@ -1,4 +1,4 @@
-package pkg
+package utils
 
 import (
 	"html/template"
@@ -9,7 +9,7 @@ import (
 )
 
 func InitTemplates() {
-	templatesDir := "./frontend/templates"
+	templatesDir := "./templates"
 
 	templateFiles, err := filepath.Glob(filepath.Join(templatesDir, "*.html"))
 	if err != nil {

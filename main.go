@@ -7,6 +7,7 @@ import (
 
 	"github.com/johneliud/bizzightful/controllers"
 	"github.com/johneliud/bizzightful/pkg"
+	"github.com/johneliud/bizzightful/utils"
 	_ "github.com/lib/pq"
 
 	"github.com/joho/godotenv"
@@ -23,7 +24,7 @@ func main() {
 	}
 	defer pkg.CloseDB()
 
-	pkg.InitTemplates()
+	utils.InitTemplates()
 
 	// Serve static files
 	fs := http.FileServer(http.Dir("frontend/static"))
