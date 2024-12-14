@@ -1,15 +1,15 @@
-package pkg
+package utils
 
 import (
 	"html/template"
 	"log"
 	"path/filepath"
+
+	"github.com/johneliud/bizzightful/controllers"
 )
 
-var Templates *template.Template
-
 func InitTemplates() {
-	templatesDir := "./frontend/templates"
+	templatesDir := "./templates"
 
 	templateFiles, err := filepath.Glob(filepath.Join(templatesDir, "*.html"))
 	if err != nil {
@@ -17,7 +17,7 @@ func InitTemplates() {
 		return
 	}
 
-	Templates, err = template.ParseFiles(templateFiles...)
+	controllers.Templates, err = template.ParseFiles(templateFiles...)
 	if err != nil {
 		log.Printf("Error parsing templates: %v", err)
 		return
