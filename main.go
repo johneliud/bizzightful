@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/johneliud/bizzightful/config"
 	"github.com/johneliud/bizzightful/controllers"
 	"github.com/johneliud/bizzightful/pkg"
 	"github.com/johneliud/bizzightful/utils"
@@ -23,6 +24,12 @@ func main() {
 		log.Fatal("Database initialization failed:", err)
 	}
 	defer pkg.CloseDB()
+
+	schemaPath := "db/schema.sql"
+	err = config.ExecuteSchema(pkg.GetDB(), schemaPath)
+	if err != nil {
+		log.Fatalf("Schema execution failed: %v", err)
+	}
 
 	utils.InitTemplates()
 
