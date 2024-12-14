@@ -6,3 +6,15 @@
   box-sizing: border-box;
   font-family: Josefin Sans, sans-serif;
 }
+.gradient-bg {
+    background: linear-gradient(120deg, #1a365d 0%, #2563eb 100%);
+  }
+  
+  .card {
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
