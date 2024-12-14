@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const trendChart = new Chart(document.getElementById("trendChart"), {
     type: "line",
     data: {
-      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      labels: ["July", "Aug", "Sep", "Oct", "Nov", "Dec"],
       datasets: [
         {
           label: "Market Growth (%)",
