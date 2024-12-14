@@ -35,6 +35,22 @@ document.querySelectorAll('[id$="Modal"]').forEach((modal) => {
       if (e.target === modal) closeModal(modal.id);
     });
   });
+ // Handle Sign In
+ document
+ .getElementById("signInForm")
+ .addEventListener("submit", function (e) {
+   e.preventDefault();
+   const submitButton = this.querySelector('button[type="submit"]');
+   submitButton.disabled = true;
+   submitButton.innerHTML =
+     '<i class="fas fa-spinner fa-spin mr-2"></i>Signing in...';
+
+   // Simulate API call
+   setTimeout(() => {
+     sessionStorage.setItem("isLoggedIn", "true");
+     window.location.href = "/dashboard";
+   }, 1500);
+ });
 
 
 
