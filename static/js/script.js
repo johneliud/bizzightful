@@ -76,7 +76,22 @@ document.querySelectorAll(".toggle-password").forEach((button) => {
       }
     });
   });
+  // Switch to Sign Up modal
+  document
+    .getElementById("switchToSignUp")
+    .addEventListener("click", function () {
+      closeModal("signInModal");
+      openModal("signUpModal");
+    });
 
+  // Animate features on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate__animated", "animate__fadeInUp");
+      }
+    });
+  });
 
   document.querySelectorAll(".feature-card").forEach((card) => {
     observer.observe(card);
