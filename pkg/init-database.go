@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 
+	"github.com/johneliud/bizzightful/config"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
@@ -63,7 +65,12 @@ func InitDB() error {
 		return fmt.Errorf("error connecting to the database: %v", err)
 	}
 
-	log.Println("Successfully connected to the database")
+	// Execute the database schema
+	schemaPath := filepath.Join("db", "schema.sql")
+	if err := config.ExecuteSchema(DB, schemaPath); err != nil {
+		return fmt.Errorf("error executing database schema: %v", err)
+	}
+
 	return nil
 
 }
