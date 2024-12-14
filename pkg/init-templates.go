@@ -4,9 +4,9 @@ import (
 	"html/template"
 	"log"
 	"path/filepath"
-
-	"github.com/johneliud/bizzightful/controllers"
 )
+
+var Templates *template.Template
 
 func InitTemplates() {
 	templatesDir := "./frontend/templates"
@@ -17,7 +17,7 @@ func InitTemplates() {
 		return
 	}
 
-	controllers.Templates, err = template.ParseFiles(templateFiles...)
+	Templates, err = template.ParseFiles(templateFiles...)
 	if err != nil {
 		log.Printf("Error parsing templates: %v", err)
 		return
