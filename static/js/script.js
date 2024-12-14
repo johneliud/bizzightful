@@ -51,6 +51,14 @@ document.querySelectorAll('[id$="Modal"]').forEach((modal) => {
      window.location.href = "/dashboard";
    }, 1500);
  });
+// Handle Sign Up
+document
+.getElementById("signUpForm")
+.addEventListener("submit", function (e) {
+  e.preventDefault();
+  sessionStorage.setItem("isLoggedIn", "true");
+  window.location.href = "/dashboard";
+});
 
 
 
