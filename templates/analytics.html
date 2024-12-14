@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Analytics Dashboard</title>
+    <link rel="stylesheet" href="/static/css/analytics.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Product Analytics Dashboard</h1>
+            <div class="search-section">
+                <input type="text" id="productSearch" placeholder="Search for a product...">
+                <button onclick="searchProduct()">Search</button>
+            </div>
+            <div class="tabs">
+                
+                <div class="tab active" onclick="switchTab('pricing')">Pricing Insights</div>
+                <div class="tab" onclick="switchTab('sales')">Sales Trends</div>
+                <div class="tab" onclick="switchTab('sentiment')">Customer Sentiment</div>
+                <div class="tab" onclick="switchTab('discount')">Discount Analysis</div>
+                <div class="tab" onclick="switchTab('category')">Category Performance</div>
+            </div>
+        </div>
+
+        <div id="contentArea">
+            <!-- Existing Tabs -->
+            <div id="pricing" class="active">
+                <div class="metrics-grid">
+                    <!-- Metrics content already exists -->
+                </div>
+                <div class="dashboard-section">
+                    <div class="chart-container">
+                        <canvas id="priceHistoryChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="competitorPriceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="sales">
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-label">Total Sales</div>
+            <div class="metric-value">$847,392</div>
+            <div class="metric-trend positive">↑ 12.3%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Units Sold</div>
+            <div class="metric-value">23,456</div>
+            <div class="metric-trend positive">↑ 8.7%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Avg Order Value</div>
+            <div class="metric-value">$36.12</div>
+            <div class="metric-trend negative">↓ 2.1%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Conversion Rate</div>
+            <div class="metric-value">4.8%</div>
+            <div class="metric-trend positive">↑ 0.5%</div>
+        </div>
+    </div>
+
+    <div class="dashboard-section">
+        <div class="chart-container full-width">
+            <h3>Monthly Sales Trend</h3>
+            <canvas id="salesTrendChart"></canvas>
+        </div>
+    </div>
+
+    <div class="dashboard-section">
+       <div class="chart-container">
+             <h3>Sales by Channel</h3>
+            <canvas id="salesChannelChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Top Selling Products</h3>
+            <canvas id="topProductsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="dashboard-section">
+        <div class="chart-container">
+            <h3>Sales by Region</h3>
+            <canvas id="regionSalesChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Sales by Time of Day</h3>
+            <canvas id="hourlySalesChart"></canvas>
+        </div>
+    </div>
+</div>
+
+            <!-- New Tabs -->
+            <div id="sentiment">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Average Rating</div>
+                        <div class="metric-value">4.2</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Total Reviews</div>
+                        <div class="metric-value">350</div>
+                    </div>
+                </div>
+                <div class="dashboard-section">
+                    <div class="chart-container full-width">
+                        <canvas id="sentimentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div id="discount">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Current Discount</div>
+                        <div class="metric-value">20%</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Sales Increase</div>
+                        <div class="metric-value">+15%</div>
+                    </div>
+                </div>
+                <div class="dashboard-section">
+                    <div class="chart-container full-width">
+                        <canvas id="discountChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div id="category">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Top Performer</div>
+                        <div class="metric-value">Product B</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Avg. Sales in Category</div>
+                        <div class="metric-value">1,120</div>
+                    </div>
+                </div>
+                <div class="dashboard-section">
+                    <div class="chart-container full-width">
+                        <canvas id="categoryPerformanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/analytics.js"></script>
+</body>
+</html>
