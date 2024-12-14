@@ -17,4 +17,18 @@
   .card:hover {
     transform: translateY(-5px);
   }
+  .chart-container {
+    height: 300px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .notification-dot {
+    animation: pulse 2s infinite;
+  }
   
