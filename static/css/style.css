@@ -6,3 +6,16 @@
   box-sizing: border-box;
   font-family: 'Josefin Sans';
 }
+
+form {
+    margin: 15px 0;
+  }
+  
+  input {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
