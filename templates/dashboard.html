@@ -1,0 +1,251 @@
+<html>
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Market Research & Logistics Platform</title>
+
+    <!-- Modern UI Libraries -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/static/css/dashboard.css" />
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-xl font-bold">Bizzightful</div>
+        <div class="flex space-x-4">
+          <a href="https://example.com/dashboard" class="hover:text-blue-200"
+            >Dashboard</a
+          >
+          <a href="https://example.com/research" class="hover:text-blue-200"
+            >Research</a
+          >
+          <a href="https://example.com/logistics" class="hover:text-blue-200"
+            >Logistics</a
+          >
+          <a href="https://example.com/community" class="hover:text-blue-200"
+            >Community</a
+          >
+          <button
+            id="helpBtn"
+            class="bg-blue-600 px-3 py-1 rounded-full hover:bg-blue-700"
+          >
+            <i class="fas fa-question-circle"></i> Help
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Welcome Message -->
+    <div class="container mx-auto p-6">
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h1 class="text-2xl font-bold mb-2">
+          Welcome to Your Market Intelligence Dashboard
+        </h1>
+        <p class="text-gray-600">
+          Your personalized hub for market research, logistics optimization, and
+          business insights.
+        </p>
+      </div>
+
+      <!-- Quick Stats with Context -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+        <div class="bg-white p-6 rounded-lg shadow-md card">
+          <div class="flex justify-between items-center">
+            <h3 class="text-gray-500">Trending Products</h3>
+            <i class="fas fa-chart-line text-blue-500"></i>
+          </div>
+          <p class="text-2xl font-bold mt-2">2,547</p>
+          <p class="text-green-500 text-sm">↑ 12% from last week</p>
+          <div class="mt-2 text-sm text-gray-600">
+            Top category: Electronics
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md card">
+          <div class="flex justify-between items-center">
+            <h3 class="text-gray-500">Market Opportunities</h3>
+            <i class="fas fa-lightbulb text-yellow-500"></i>
+          </div>
+          <p class="text-2xl font-bold mt-2">157</p>
+          <p class="text-blue-500 text-sm">New opportunities found</p>
+          <div class="mt-2 text-sm text-gray-600">
+            Click to explore detailed analysis
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md card">
+          <div class="flex justify-between items-center">
+            <h3 class="text-gray-500">Logistics Efficiency</h3>
+            <i class="fas fa-truck text-green-500"></i>
+          </div>
+          <p class="text-2xl font-bold mt-2">94%</p>
+          <p class="text-green-500 text-sm">↑ 5% improvement</p>
+          <div class="mt-2 text-sm text-gray-600">Cost savings: $12,450</div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md card">
+          <div class="flex justify-between items-center">
+            <h3 class="text-gray-500">Market Alerts</h3>
+            <i class="fas fa-bell text-red-500"></i>
+          </div>
+          <p class="text-2xl font-bold mt-2">7</p>
+          <p class="text-orange-500 text-sm">Requires attention</p>
+          <div class="mt-2 text-sm text-gray-600">3 high priority alerts</div>
+        </div>
+      </div>
+
+      <!-- Market Research Section with Insights -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-bold mb-4">Market Trends</h2>
+          <div class="chart-container">
+            <canvas id="trendChart"></canvas>
+          </div>
+          <div class="mt-4 p-4 bg-blue-50 rounded-lg insights-card">
+            <h4 class="font-semibold text-blue-800">Key Insights:</h4>
+            <ul class="mt-2 space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Strong growth in sustainable products segment</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-exclamation-circle text-yellow-500 mt-1 mr-2"
+                ></i>
+                <span>Seasonal dip expected in Q3</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-bold mb-4">Price Analysis</h2>
+          <div class="chart-container">
+            <canvas id="priceChart"></canvas>
+          </div>
+          <div class="mt-4 p-4 bg-blue-50 rounded-lg insights-card">
+            <h4 class="font-semibold text-blue-800">Recommendations:</h4>
+            <ul class="mt-2 space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-lightbulb text-yellow-500 mt-1 mr-2"></i>
+                <span>Consider bulk purchasing for Product A</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-chart-line text-blue-500 mt-1 mr-2"></i>
+                <span>Price optimization potential in Product C</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logistics Tools with Action Items -->
+      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h2 class="text-xl font-bold mb-4">Logistics Optimizer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div>
+            <label class="block text-gray-700 mb-2">Origin Country</label>
+            <select class="w-full p-2 border rounded">
+              <option>Select Country</option>
+              <option>Kenya</option>
+              <option>China</option>
+              <option>United States</option>
+              <option>Germany</option>
+              <option>India</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Destination</label>
+            <select class="w-full p-2 border rounded">
+              <option>Select Destination</option>
+              <option>Europe</option>
+              <option>North America</option>
+              <option>Asia</option>
+              <option>Africa</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Transport Mode</label>
+            <select class="w-full p-2 border rounded">
+              <option>Select Mode</option>
+              <option>Sea Freight</option>
+              <option>Air Freight</option>
+              <option>Rail</option>
+              <option>Road</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Action Items -->
+        <div class="border-t pt-4">
+          <h3 class="font-semibold mb-3">Recommended Actions</h3>
+          <div class="space-y-2">
+            <div
+              class="action-item p-2 rounded-lg flex items-center justify-between"
+            >
+              <div class="flex items-center">
+                <i class="fas fa-star text-yellow-500 mr-2"></i>
+                <span>Optimize current shipping routes</span>
+              </div>
+              <button class="text-blue-600 hover:text-blue-800">
+                Take Action
+              </button>
+            </div>
+            <div
+              class="action-item p-2 rounded-lg flex items-center justify-between"
+            >
+              <div class="flex items-center">
+                <i class="fas fa-money-bill-wave text-green-500 mr-2"></i>
+                <span>Review cost-saving opportunities</span>
+              </div>
+              <button class="text-blue-600 hover:text-blue-800">Analyze</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div
+      id="helpModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+    >
+      <div class="bg-white p-6 rounded-lg max-w-lg w-full mx-4">
+        <h2 class="text-xl font-bold mb-4">Getting Started</h2>
+        <div class="space-y-4">
+          <p>
+            Welcome to MarketLogix! Here's how to make the most of your
+            dashboard:
+          </p>
+          <ol class="list-decimal ml-4 space-y-2">
+            <li>Review your Quick Stats for immediate insights</li>
+            <li>Analyze Market Trends for strategic planning</li>
+            <li>Use the Logistics Optimizer to reduce costs</li>
+            <li>Check Alerts regularly for important updates</li>
+          </ol>
+          <button
+            id="closeHelpBtn"
+            class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Got it!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+  </body>
+</html>
